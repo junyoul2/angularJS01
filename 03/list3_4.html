@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='MyFirstCtrl'>
+<head>
+	<script src="../js/angular.min.js"></script>
+	<script>
+		var MyFirstCtrl = angular.module('MyFirstCtrl', []);
+
+		MyFirstCtrl.controller('MainCtrl', ['$scope', function($scope) {
+			var employees = [
+				'Catherine Grant',
+				'Monica Grant',
+				'Christopher Grant',
+				'Jennifer Grant'
+			];
+
+			$scope.ourEmployees = employees;
+		}]);
+	</script>
+</head>
+
+<body ng-controller='MainCtrl'>
+	<h2 ng-controller='MainCtrl'>Number of Employees: {{ ourEmployees.length}}</h2>
+	<p ng-repeat="employee in ourEmployees">{{employee}}</p>
+</body>
+</html>
+
